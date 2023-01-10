@@ -5,15 +5,15 @@ This project is part of the Udacity Azure ML Nanodegree.
 In this project, I continued to work with the [Bank Marketing](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) dataset. I used Azure to configure a cloud-based machine learning production model, deploy it, and consume it. Both `Azure ML Studio` and `Python SDK` were used.
 
 ## Architectural Diagram
-In this project, we use AutoML to train a best model, then operationalize it by following the workflow below. 
+In this project, I used AutoML to find and train a best model, then operationalize it by following the workflow below. 
 
-The following diagram provides a visual summary of the workflow:
+The following diagram provides a visual summary of the workflow (source: Udacity classroom):
 ![Workflow](/starter_files/images/Workflow.JPG)
 
 As you can see, the steps were:
-1. Authentication: Creation of a Service Principal account and associate it with a specific workspace
+1. Authentication: Creation of a Service Principal account and association it with a specific workspace
 2. Automated ML Experiment:  Creation of an experiment using Automated ML, configuration of a compute cluster and using cluster to run the experiment
-3. Deploy the best model: Deploying the Best Model will allow to interact with the HTTP API service and interact with the model by sending data over POST requests
+3. Deploy the best model: Deploying the Best Model will allow to interact with the HTTP API service and interaction with the model by sending data over POST requests
 4. Enable logging: Enabling Application Insights and retrieving logs
 5. Swagger Documentation: Consumption of the deployed model using Swagger
 6. Consume model endpoints: Consumption of the deployed model via script
@@ -54,7 +54,7 @@ The best model was deployed including Authentication and by using Azure Containe
 ![Deploy Config](/starter_files/images/Deploy_config.png)
 
 ### Enable logging
-The Workspace information is stored in the [configuration file](/starter_files/config.json) which is needed in the script. By running [logs.py](/starter_files/logs.py) Application Insights was enabled as you can see here:
+The Workspace information is stored in the [configuration file](/starter_files/config.json) which is needed in the script. By running [logs.py](/starter_files/logs.py), Application Insights was enabled as you can see here:
 
 ![Application Insights Enabled](/starter_files/images/ApplicationInsights_enabled_in_AzureML.png)
 
@@ -62,19 +62,20 @@ The logs can be shown in the console:
 
 ![Console logs](/starter_files/images/ApplicationInsights_logs_via_script.png)
 
-Also you can see the logs in AzureML itself:
+Also, you can see the logs in the Azure ML Workspace:
 
 ![AzureML logs](/starter_files/images/ApplicationInsights_logs_in_AzureML.png)
 
 ### Swagger Documentation
-The [swagger.json file](/starter_files/swagger/swagger.json) of our custom API needs to be stored in the correct repository.
+The [swagger.json file](/starter_files/swagger/swagger.json) of my custom API needs to be stored in the correct repository.
 
 The purpose of the [swagger.sh script](/starter_files/swagger/swagger.sh) is to start a local webserver of swagger-ui. 
+
 ![Output swagger.sh](/starter_files/images/Output_swagger_sh.png)
 
 "swagger-ui" is a tool that understands the [swagger.json file](/starter_files/swagger/swagger.json) file format and visualizes the API definition contained in it. The "swagger-ui" webserver is started by default on port 80, but since on the virtual machine provided by the course lab port 80 is already taken (by another program), I modified the [swagger.sh](/starter_files/swagger/swagger.sh) file to use port 9000.
 
-After having started "swagger-ui" by running the swagger.sh script I need to provide my custom, downloaded from azure, [swagger.json file](/starter_files/swagger/swagger.json) to the swagger-ui somehow. This is done by starting a local (again, on the same machine) python server using the [serve.py script](/starter_files/swagger/serve.py) in another terminal. This script makes it possible to access the swagger.json file over the HTTP protocol, expected by the "swagger-ui" tool, i.e. on http://localhost:8000/swagger.json. The python webserver does nothing more than serving local files, so in addition to http://localhost:8000/swagger.json it is serving also http://localhost:8000/serve.py for example.
+After having started "swagger-ui" by running the swagger.sh script I need to provide my custom [swagger.json file](/starter_files/swagger/swagger.json) downloaded from Azure to the swagger-ui somehow. This is done by starting a local Python server via using the [serve.py script](/starter_files/swagger/serve.py) in another terminal. This script makes it possible to access the swagger.json file over the HTTP protocol, expected by the "swagger-ui" tool, i.e. on http://localhost:8000/swagger.json. The python webserver does nothing more than serving local files, so in addition to http://localhost:8000/swagger.json it is serving also http://localhost:8000/serve.py for example.
 The Swagger inferface looks as follows:
 
 ![Swagger Interface](/starter_files/images/Swagger_interface.png)
@@ -91,7 +92,7 @@ The endpoint can be consumed by [script](/starter_files/endpoint2.py) after ensu
 
 ### Create and publish a pipeline
 First, a compute instance for the [Jupyter Notebook](/starter_files/aml-pipelines-with-automated-machine-learning-step.ipynb) needs to be created. The notebook was modified and run through the cells.
-Also for that step, the [Bankmarketing dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) was used:
+Also for this step, the [Bankmarketing dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) was used:
 
 ![Dataset](/starter_files/images/Dataset_available.png)
 
