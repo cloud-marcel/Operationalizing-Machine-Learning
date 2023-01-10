@@ -114,7 +114,7 @@ The progress could be visualized in the notebook via RunDetails:
 
 
 ## Screen Recording
-A screencast demonstraing the entire process of the working ML application, including interactions with the deployed model and published pipeline endpoints is available with the following link:
+A screencast showing the entire process of the implemented ML application, including interactions with the deployed model and published pipeline endpoints is available via the following link:
 https://youtu.be/PyJNvO2ogzU
 
 
