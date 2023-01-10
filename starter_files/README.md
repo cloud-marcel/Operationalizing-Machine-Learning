@@ -4,11 +4,9 @@
 This project is part of the Udacity Azure ML Nanodegree.
 In this project, I continued to work with the [Bank Marketing](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) dataset. I used Azure to configure a cloud-based machine learning production model, deploy it, and consume it. Both `Azure ML Studio` and `Python SDK` were used.
 
-*TODO:* Write an overview to your project.
-
 ## Architectural Diagram
 In this project, we use AutoML to train a best model, then operationalize it by following the workflow below. 
-*TODO*: Provide an architectual diagram of the project and give an introduction of each step. An architectural diagram is an image that helps visualize the flow of operations from start to finish. In this case, it has to be related to the completed project, with its various stages that are critical to the overall flow. For example, one stage for managing models could be "using Automated ML to determine the best model". 
+
 The following diagram provides a visual summary of the workflow:
 ![Workflow](/starter_files/images/Workflow.JPG)
 
@@ -24,7 +22,7 @@ As you can see, the steps were:
 What was done in each step is described in detail in the next subchapter.
 
 ## Key Steps
-*TODO*: Write a short discription of the key steps. Remeber to include all the screenshots required to demonstrate key steps. 
+The results of the steps are described and visualized in the following.
 
 ### Authentication
 In this step, the Azure Machine Learning Extension was used which allows you to interact with Azure Machine Learning Studio and to create a Service Principal (SP) to access the project workspace. Since I used the lab environment provided by Udacity I had no sufficient privilege to create the SP, so this step was not performed.
@@ -60,14 +58,14 @@ Also you can see the logs in AzureML itself:
 ![AzureML logs](/starter_files/images/ApplicationInsights_logs_in_AzureML.png)
 
 ### Swagger Documentation
-The ![swagger.json file](/starter_files/swagger/swagger.json) of our custom API needs to be stored in the correct repository.
+The [swagger.json file](/starter_files/swagger/swagger.json) of our custom API needs to be stored in the correct repository.
 
-The purpose of the ![swagger.sh script](/starter_files/swagger/swagger.sh) is to start a local webserver of swagger-ui. 
+The purpose of the [swagger.sh script](/starter_files/swagger/swagger.sh) is to start a local webserver of swagger-ui. 
 ![Output swagger.sh](/starter_files/images/Output_swagger_sh.png)
 
-"swagger-ui" is a tool that understands the ![swagger.json file](/starter_files/swagger/swagger.json) file format and visualizes the API definition contained in it. The "swagger-ui" webserver is started by default on port 80, but since on the virtual machine provided by the course lab port 80 is already taken (by another program), I modified the ![swagger.sh](/starter_files/swagger/swagger.sh) file to use port 9000.
+"swagger-ui" is a tool that understands the [swagger.json file](/starter_files/swagger/swagger.json) file format and visualizes the API definition contained in it. The "swagger-ui" webserver is started by default on port 80, but since on the virtual machine provided by the course lab port 80 is already taken (by another program), I modified the [swagger.sh](/starter_files/swagger/swagger.sh) file to use port 9000.
 
-After having started "swagger-ui" by running the swagger.sh script I need to provide my custom, downloaded from azure, ![swagger.json file](/starter_files/swagger/swagger.json) to the swagger-ui somehow. This is done by starting a local (again, on the same machine) python server using the ![serve.py script](/starter_files/swagger/serve.py) in another terminal. This script makes it possible to access the swagger.json file over the HTTP protocol, expected by the "swagger-ui" tool, i.e. on http://localhost:8000/swagger.json. The python webserver does nothing more than serving local files, so in addition to http://localhost:8000/swagger.json it is serving also http://localhost:8000/serve.py for example.
+After having started "swagger-ui" by running the swagger.sh script I need to provide my custom, downloaded from azure, [swagger.json file](/starter_files/swagger/swagger.json) to the swagger-ui somehow. This is done by starting a local (again, on the same machine) python server using the [serve.py script](/starter_files/swagger/serve.py) in another terminal. This script makes it possible to access the swagger.json file over the HTTP protocol, expected by the "swagger-ui" tool, i.e. on http://localhost:8000/swagger.json. The python webserver does nothing more than serving local files, so in addition to http://localhost:8000/swagger.json it is serving also http://localhost:8000/serve.py for example.
 The Swagger inferface looks as follows:
 ![Swagger Interface](/starter_files/images/Swagger_interface.png)
 
@@ -76,11 +74,11 @@ You can see the `score` method with an example input:
 
 
 ### Consume model endpoints
-The endpoint can be consumed by ![script](/starter_files/endpoint2.py) after ensuring the authentication. I passed one data sample and received the following answer:
+The endpoint can be consumed by [script](/starter_files/endpoint2.py) after ensuring the authentication. I passed one data sample and received the following answer:
 ![Output endpoint2.py](/starter_files/images/Output_endpoint_py.png)
 
 ### Create and publish a pipeline
-First, a compute instance for the ![Jupyter Notebook](/starter_files/aml-pipelines-with-automated-machine-learning-step.ipynb) needs to be created. The notebook was modified and run through the cells.
+First, a compute instance for the [Jupyter Notebook](/starter_files/aml-pipelines-with-automated-machine-learning-step.ipynb) needs to be created. The notebook was modified and run through the cells.
 Also for that step, the [Bankmarketing dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) was used:
 ![Dataset](/starter_files/images/Dataset_available.png)
 
@@ -102,5 +100,5 @@ The progress could be visualized in the notebook via RunDetails:
 
 ## Standout Suggestions
 Some suggestions to the Udacity mentors from my side:
-1. The enpoint requests via script needs to hand over the data input in a very specific way. That was not updated in the classroom. Refer to my file ![endpoint2.py](/starter_files/endpoint2.py)
+1. The enpoint requests via script needs to hand over the data input in a very specific way. That was not updated in the classroom. Refer to my file [endpoint2.py](/starter_files/endpoint2.py)
 2. The RunDetails widget seems to have problems when trying to visualize in the Jupyter Notebook.
