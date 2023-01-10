@@ -95,7 +95,7 @@ Also for that step, the [Bankmarketing dataset](https://automlsamplenotebookdata
 
 ![Dataset](/starter_files/images/Dataset_available.png)
 
-Via the Python SDK, an AutoML pipeline was created and published:
+Via the `Python SDK`, an AutoML pipeline was created and published:
 
 ![Pipeline Overview](/starter_files/images/Jupyter_pipeline_created_and_published.png)
 
@@ -113,7 +113,9 @@ The progress could be visualized in the notebook via RunDetails:
 
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+A screencast demonstraing the entire process of the working ML application, including interactions with the deployed model and published pipeline endpoints is available with the following link:
+https://youtu.be/PyJNvO2ogzU
+
 
 ## Standout Suggestions
 Some suggestions to the Udacity mentors from my side:
