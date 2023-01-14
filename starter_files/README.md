@@ -118,7 +118,7 @@ A screencast showing the entire process of the implemented ML application, inclu
 https://youtu.be/PyJNvO2ogzU
 
 
-## Standout Suggestions
-Some suggestions to the Udacity mentors from my side:
-1. The enpoint requests via script needs to hand over the data input in a very specific way. That was not updated in the classroom. Refer to my file [endpoint2.py](/starter_files/endpoint2.py)
-2. The RunDetails widget seems to have problems when trying to visualize in the Jupyter Notebook.
+## Future Improvement Suggestions
+1. The accuracy of the model (94.77%) is quite good but can be improved by solving the data imbalance in dataset.
+2. The Deep Learning option can be tried when training the model which is not used by the  AutoML in the runs.
+3. GPU instead of CPU could be used for faster training.
