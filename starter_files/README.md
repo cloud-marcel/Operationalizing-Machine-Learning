@@ -108,11 +108,9 @@ The Pipeline Overview shows the pipeline endpoint to be ACTIVE and accessible vi
 
 ![Published Pipeline Overview](/starter_files/images/Jupyter_published_pipeline_overview_resubmit.png)
 
-The progress could usually be visualized in the notebook via RunDetails:
+The progress could usually be visualized in the notebook via RunDetails. There is a bug with the extension azureml.widgets at the moment. Even after uninstalling, clearing the kernel and installing again, I could not see the output. This is discussed in the [classroom](https://knowledge.udacity.com/questions/947516?utm_campaign=ret_600_auto_ndxxx_knowledge-answer-created_na&utm_source=blueshift&utm_medium=email&utm_content=ret_600_auto_ndxxx_knowledge-answer-created_na&bsft_clkid=740d20b7-b7a4-4f2c-a4e7-72c4ccf533fb&bsft_uid=5c9b5725-f4bc-4a88-94a8-2b0fe40ba6e5&bsft_mid=d0eb1471-65c1-46d3-b39a-f2067ace5511&bsft_eid=22b8f7b6-5eac-66ee-cf9f-0d5b86b9fddc&bsft_txnid=5d771386-1ecb-4eae-874d-b8542df4affa&bsft_mime_type=html&bsft_ek=2023-01-16T18%3A10%3A13Z&bsft_aaid=8d7e276e-4a10-41b2-8868-423fe96dd6b2&bsft_lx=1&bsft_tv=1#948103) without any result.
 
 ![RunDetails](/starter_files/images/Jupyter_RunDetails_resubmit.JPG)
-
-There is a bug with the extension azureml.widgets at the moment. Even after uninstalling, clearing the kernel and installing again, I could not see the output. This is discussed in the [classroom](https://knowledge.udacity.com/questions/947516?utm_campaign=ret_600_auto_ndxxx_knowledge-answer-created_na&utm_source=blueshift&utm_medium=email&utm_content=ret_600_auto_ndxxx_knowledge-answer-created_na&bsft_clkid=740d20b7-b7a4-4f2c-a4e7-72c4ccf533fb&bsft_uid=5c9b5725-f4bc-4a88-94a8-2b0fe40ba6e5&bsft_mid=d0eb1471-65c1-46d3-b39a-f2067ace5511&bsft_eid=22b8f7b6-5eac-66ee-cf9f-0d5b86b9fddc&bsft_txnid=5d771386-1ecb-4eae-874d-b8542df4affa&bsft_mime_type=html&bsft_ek=2023-01-16T18%3A10%3A13Z&bsft_aaid=8d7e276e-4a10-41b2-8868-423fe96dd6b2&bsft_lx=1&bsft_tv=1#948103)
 
 The ML studio is showing the scheduled run:
 
