@@ -116,7 +116,7 @@ There is a bug with the extension azureml.widgets at the moment. Even after unin
 
 The ML studio is showing the scheduled run:
 
-![Sheduled Run](/starter_files/images/Jupyter_sheduled_run_resubmit.JPG)
+![Sheduled Run](/starter_files/images/Jupyter_sheduled_run_resubmit.png)
 
 
 ## Screen Recording
