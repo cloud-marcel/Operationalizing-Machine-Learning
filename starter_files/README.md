@@ -94,23 +94,29 @@ The endpoint can be consumed by [script](/starter_files/endpoint2.py) after ensu
 First, a compute instance for the [Jupyter Notebook](/starter_files/aml-pipelines-with-automated-machine-learning-step.ipynb) needs to be created. The notebook was modified and run through the cells.
 Also for this step, the [Bankmarketing dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) was used:
 
-![Dataset](/starter_files/images/Dataset_available.png)
+![Dataset](/starter_files/images/Jupyter_dataset_available_resubmit.png)
 
 Via the `Python SDK`, an AutoML pipeline was created and published:
 
-![Pipeline Overview](/starter_files/images/Jupyter_pipeline_created_and_published.png)
+![Pipeline Overview](/starter_files/images/Jupyter_pipeline_created_and_published_resubmit.png)
 
 After publishing, you could see the pipeline endpoint in the Azure ML workspace:
 
-![Pipeline Endpoint](/starter_files/images/Jupyter_pipeline_endpoint.png)
+![Pipeline Endpoint](/starter_files/images/Jupyter_pipeline_endpoint_resubmit.png)
 
 The Pipeline Overview shows the pipeline endpoint to be ACTIVE and accessible via REST endpoint:
 
-![Published Pipeline Overview](/starter_files/images/Jupyter_published_pipeline_overview.png)
+![Published Pipeline Overview](/starter_files/images/Jupyter_published_pipeline_overview_resubmit.png)
 
-The progress could be visualized in the notebook via RunDetails:
+The progress could usually be visualized in the notebook via RunDetails:
 
-![RunDetails](/starter_files/images/Jupyter_RunDetails.JPG)
+![RunDetails](/starter_files/images/Jupyter_RunDetails_resubmit.JPG)
+
+There is a bug with the extension azureml.widgets at the moment. Even after uninstalling, clearing the kernel and installing again, I could not see the output. This is discussed in the [classroom](https://knowledge.udacity.com/questions/947516?utm_campaign=ret_600_auto_ndxxx_knowledge-answer-created_na&utm_source=blueshift&utm_medium=email&utm_content=ret_600_auto_ndxxx_knowledge-answer-created_na&bsft_clkid=740d20b7-b7a4-4f2c-a4e7-72c4ccf533fb&bsft_uid=5c9b5725-f4bc-4a88-94a8-2b0fe40ba6e5&bsft_mid=d0eb1471-65c1-46d3-b39a-f2067ace5511&bsft_eid=22b8f7b6-5eac-66ee-cf9f-0d5b86b9fddc&bsft_txnid=5d771386-1ecb-4eae-874d-b8542df4affa&bsft_mime_type=html&bsft_ek=2023-01-16T18%3A10%3A13Z&bsft_aaid=8d7e276e-4a10-41b2-8868-423fe96dd6b2&bsft_lx=1&bsft_tv=1#948103)
+
+The ML studio is showing the scheduled run:
+
+![Sheduled Run](/starter_files/images/Jupyter_sheduled_run_resubmit.JPG)
 
 
 ## Screen Recording
